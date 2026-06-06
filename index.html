@@ -194,5 +194,29 @@ completely monotone.
         </main>
     </div>
 <script src="script.js"></script>
+<script>
+function updateLayout() {
+    const bib = document.getElementById('fixed-bibliography');
+    const width = window.innerWidth;
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+    // Ha mobil (768px alatt) VAGY fekvő módban vagyunk, legyen relative
+    if (width < 900 || isLandscape) {
+        bib.style.position = 'relative';
+        bib.style.display = 'block';
+    } else {
+        // PC-n visszaállítjuk az eredeti (esetleg fixed) stílust
+        // Itt beállíthatod, mit szeretnél PC-n (ha fixed volt, akkor írd vissza)
+        bib.style.position = 'fixed'; 
+    }
+}
+
+// Figyeljük az ablak átméretezését és az elforgatást
+window.addEventListener('resize', updateLayout);
+window.addEventListener('orientationchange', updateLayout);
+
+// Első futtatás
+updateLayout();
+</script>
 </body>
 </html>
