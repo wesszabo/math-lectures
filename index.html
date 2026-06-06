@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Mathematics Presentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+    <div class="app-wrapper">
+
+        <nav class="sidebar">
+            <button onclick="showSection('bevezetes')">Motivation</button>
+            <button onclick="showSection('halozat')">Logical Map</button>
+        </nav>
+
+        <main class="main-content">
+            
+            <section id="bevezetes">
+                <h1>Completely monotone functions in general and some applications</h1>
+                 <div class="meta-data">
+                      (JMAA, 2026)
+                <p>The subject of this paper is completely monotone and related functions. 
+First of all, we recall some definitions.</p>
+<h2>Definitions</h2>
+<div class="definition">
+    <span class="kiemelt">Definition 1.</span> A function $f:I\to \mathbf{R}$, where $I\subseteq\mathbf{R}$ is an 
+interval, is called completely monotone if $f$ has derivatives of
+all orders and satisfies
+    <br>
+    $$ (-1)^n f^{(n)}(x) \geq 0 \quad (n=0,1,2,\ldots;\, x\in I). $$
+</div>
+
+<div class="definition">
+    <span class="kiemelt">Definition 2.</span> A positive function $f:I\to \mathbf{R}$, where $I\subseteq\mathbf{R}$ is 
+an interval, is called logarithmically completely monotone if $f$ has 
+derivatives of all orders and satisfies
+ <br>
+$$
+	(-1)^n (\log\circ f)^{(n)}(x) \geq 0\quad (n=1,2,\ldots;\, x\in I).
+$$
+</div>
+
+<div class="definition">
+    <span class="kiemelt">Definition 3.</span> A function $f:I\to \mathbf{R}$, where $I\subseteq\mathbf{R}$ is an 
+interval, is called absolutely monotone if $f$ has derivatives of
+all orders and satisfies
+ <br>
+$$
+	f^{(n)}(x) \geq 0\quad (n=0,1,2,\ldots;\, x\in I).
+$$
+</div>
+
+<div class="definition">
+    <span class="kiemelt">Definition 4.</span> A function $f:I\to \mathbf{R}$, where $I\subseteq\mathbf{R}$ is an
+interval, is called a Bernstein function if $f\geq 0$, and $f'$ is 
+completely monotone.
+</div>
+
+<h2 id="motivation">Motivations</h2>
+<p>
+    The main motivation of this paper is to address certain inaccuracies in the existing literature, 
+    specifically regarding results published in JMAA. Our objectives are as follows:
+</p>
+<ul>
+    <li>Correcting the proof of Theorem 1 and Lemma 1 in [2].</li>
+    <li>Providing simpler proofs and generalizations for Theorem 2 in [10] and Theorem 2 in [2].</li>
+    <li>Generalizing Theorem 3 in [2].</li>
+</ul>
+
+<div class="motivation-section">
+    <p>
+        In [2] Theorem 1, it is claimed that the function 
+        $f_{\alpha}(x)$ is strictly completely monotonic on $(-a,\infty)$ 
+        if and only if $\alpha \leq 1$. While the "if" part is correct, 
+        the proof of the "only if" part is flawed due to an incorrect 
+        calculation of $f_{\alpha}'(x)$.
+    </p>
+
+    <div class="correction-box">
+        <span class="kiemelt">Correction and Improvement:</span>
+        We cannot verify the original "only if" statement, but we provide 
+        the necessary condition $\alpha \leq 2$ in Theorem 17. Furthermore, 
+        under the condition $-1-2a+2b > 0$, we establish $\alpha < 2$. 
+        In cases where $\beta < b-a$, we successfully prove an 
+        "if and only if $\alpha \leq 1$" statement, generalizing the 
+        original theorem.
+    </div>
+
+    <div class="open-problem">
+        <span class="kiemelt">Open Problem.</span> 
+        Let $f_{\alpha}(x)=(x+a)^{\alpha}\left[ \psi(x+b)-\psi(x+a)-\frac{b-a}{x+a}\right]$. 
+        Determine the value of $\alpha_0$ such that $f_{\alpha}(x)$ is strictly 
+        completely monotone on $(-a, \infty)$ if and only if $\alpha \leq \alpha_0$. 
+        Given our results, it is known that $1 \leq \alpha_0 \leq 2$.
+    </div>
+</div>
+
+
+            </section>
+
+            <section id="halozat" style="display: none;">
+                <div id="canvas-container">
+                    <pre class="mermaid">
+                    graph TD
+	    classDef default fill:#ffffff,stroke:#333333,stroke-width:2px,color:#000000;
+            classDef remark fill:#eceff1,stroke:#607d8b,stroke-width:2px,stroke-dasharray: 5 5,color:#000000;
+
+            
+            T1["Theorem 1"]
+            C2["Corollary 2"]
+            T3["Theorem 3"]
+                  
+            C4["Corollary 4"]
+            T5["Theorem 5"]
+            
+            C6["Corollary 6"]
+            C7["Corollary 7"]
+            
+            T8["Theorem 8"]
+            
+            C9["Corollary 9"]
+            L10["Lemma 10"]
+            T11["Theorem 11"]
+            L12["Lemma 12"]
+            T13["Theorem 13"]
+            
+            T15["Theorem 15"]
+            T16["Theorem 16"]
+            T17["Theorem 17"]
+            R18["Remark 18"]
+            T19["Theorem 19"]
+            T20["Theorem 20"]
+            L21["Lemma 21"]
+            T22["Theorem 22"]
+
+            
+            T1 --> C2
+            T3 --> C4
+            
+            T5 --> C6
+            T5 --> C7
+            
+            
+            T8 --> C9
+            T5 -- "similar statement" --- T8
+            C7 -- "same statement" --- C9
+            C7 --> L12
+            C4 --> T11
+            L10 --> T11
+            T17 --> T20
+            T11 --> T20
+            L21 --> T22
+            T13 --> T22
+            L12 -. "generalization" .-> T15
+            T13 --> T15
+            T3 --> T15
+            C9 --> T15 
+            T17 --> T19
+            C7 --> T19
+            
+            R18 -. "improvement" .-> T17
+            
+            class R18 remark;
+            
+            class R5 remark;
+            
+            
+                        </pre>
+                </div>
+                <div id="fixed-bibliography">
+    <strong>Bibliography</strong>
+    <hr>
+    <div id="b1"><strong>[1]</strong> Bateman, H., and Bateman Manuscript Project, <i>Higher Transcendental Functions Volume 1</i>, McGraw-Hill Book Company, 1953.</div>
+    <div id="b2"><strong>[2]</strong> Chen, C. P., <i>Complete monotonicity and logarithmically complete monotonicity properties for the gamma and psi functions</i>, J. Math. Anal. Appl. 336 (2007) 812-822.</div>
+    <div id="b3"><strong>[3]</strong> Dubourdieu, J., <i>Sur un théorème de M.S. Bernstein relatif à la transformation de Laplace-Stieltjes</i>, Compositio Math. 7 (1939) 96-111.</div>
+    <div id="b4"><strong>[4]</strong> Gneiting, I., <i>On the Bernstein–Hausdorff–Widder conditions for completely monotone functions</i>, Expo. Math. 16 (1998) 181-183.</div>
+    <div id="b5"><strong>[5]</strong> Lorch, L., and Newman, D. J., <i>On the composition of completely monotonic functions and completely monotonic sequences and related questions</i>, J. London Math. Soc. 28 (1983) 31-45.</div>
+    <div id="b6"><strong>[6]</strong> Lorch, L., and Szego, P., <i>Higher monotonicity properties of certain Sturm-Liouville functions</i>, Acta Math. 109 (1963) 55-73.</div>
+    <div id="b7"><strong>[7]</strong> Luke, Y. L., <i>The Special Functions and Their Approximations</i>, Academic Press 1964.</div>
+    <div id="b8"><strong>[8]</strong> Merkle, M., <i>"Completely Monotone Functions: A Digest"</i>. Analytic Number Theory, Approximation Theory, and Special Functions: In Honor of Hari M. Srivastava, Springer New York, 2014.</div>
+    <div id="b9"><strong>[9]</strong> Miller, K. S., and Samko, S. G., <i>Completely monotonic functions</i>, Integr. Transf. and Spec. Funct. 12 (2001) 389-402.</div>
+    <div id="b10"><strong>[10]</strong> Qi, F., and Chen, C. P., <i>A complete monotonicity property of the gamma function</i>, J. Math. Anal. Appl. 296 (2004) 603-607.</div>
+    <div id="b11"><strong>[11]</strong> Vogt, H., and Voigt, J., <i>A monotonicity property of the Γ-function</i>, J. Inequal. Pure Appl. Math. 3 (2002) 812-822.</div>
+    <div id="b12"><strong>[12]</strong> Widder, D. V., <i>The Laplace Transform</i>, Princeton University Press, 1946.</div>
+
+            </section>
+           <div id="window-container"></div>
+        </main>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
