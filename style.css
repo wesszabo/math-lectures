@@ -267,7 +267,7 @@ ol.custom-numbered li::before {
 }
 
 /* Mobil / Tablet felülírás */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     #fixed-bibliography {
         position: relative !important; /* Kikerül a fix pozícióból */
         bottom: auto !important;
