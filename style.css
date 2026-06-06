@@ -118,7 +118,7 @@ ol.custom-numbered li::before {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     border: 1px solid rgba(0,0,0,0.1); 
     overflow: hidden; 
-    z-index: 100;
+    z-index: 9999 !important;
     
     /* Új szabályok az átméretezhetőséghez */
     min-width: 300px;
@@ -229,18 +229,27 @@ ol.custom-numbered li::before {
     border-radius: 4px;
 }
 
-/* Mobilnézet (768px alatt) */
+/* Mobil és táblagép nézet (768px alatt) */
 @media screen and (max-width: 768px) {
     .app-wrapper {
         flex-direction: column !important;
+        height: auto !important;
     }
     .sidebar {
-        width: 100% !important; /* Telefonon teljes szélesség */
+        width: 100% !important;
         position: relative !important;
-        order: 2; /* Bibliography alulra kerül */
+        order: 2;
     }
     .main-content {
-        order: 1; /* Tartalom felülre */
+        order: 1;
+    }
+    /* Bibliography kényszerítése az oldal aljára */
+    #fixed-bibliography {
+        position: relative !important;
+        width: 100% !important;
+        top: auto !important;
+        left: auto !important;
+        margin-top: 20px !important;
     }
 }
 
