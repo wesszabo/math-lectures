@@ -197,26 +197,27 @@ completely monotone.
 <script>
 function updateLayout() {
     const bib = document.getElementById('fixed-bibliography');
-    const width = window.innerWidth;
-    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    if (!bib) return;
 
-    // Ha mobil (768px alatt) VAGY fekvő módban vagyunk, legyen relative
-    if (width < 900 || isLandscape) {
+    // Az "erőszakos" stílusváltás
+    if (window.innerWidth < 950 || window.innerHeight < 500) {
         bib.style.position = 'relative';
-        bib.style.display = 'block';
+        bib.style.bottom = 'auto';
+        bib.style.right = 'auto';
+        bib.style.margin = '20px auto';
     } else {
-        // PC-n visszaállítjuk az eredeti (esetleg fixed) stílust
-        // Itt beállíthatod, mit szeretnél PC-n (ha fixed volt, akkor írd vissza)
-        bib.style.position = 'fixed'; 
+        // PC-n visszakapja a fixet
+        bib.style.position = 'fixed';
+        bib.style.bottom = '20px';
+        bib.style.right = '20px';
+        bib.style.margin = '0';
     }
 }
 
-// Figyeljük az ablak átméretezését és az elforgatást
+// Figyeljük a forgatást és az átméretezést
 window.addEventListener('resize', updateLayout);
 window.addEventListener('orientationchange', updateLayout);
-
-// Első futtatás
-updateLayout();
+window.onload = updateLayout;
 </script>
 </body>
 </html>
