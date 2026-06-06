@@ -229,28 +229,25 @@ ol.custom-numbered li::before {
     border-radius: 4px;
 }
 
-/* Mobilnézet: flex irány megváltoztatása */
-@media screen and (max-width: 768px) {
+/* Mobilnézet: állított (portrait) mód esetén */
+@media screen and (orientation: portrait) {
     .app-wrapper {
-        flex-direction: column; /* A Bibliography a tartalom alá kerül */
-        height: auto;           /* Ne legyen fix magasság */
+        flex-direction: column !important;
     }
-
     .sidebar {
-        width: 100%;            /* Szélesség a teljes képernyőre */
-        height: auto;
-        position: static;
-        order: 2;               /* Ez teszi a Bibliography-t alulra */
+        width: 100% !important;
+        position: static !important;
+        order: 2;
     }
-
     .main-content {
-        height: auto;
-        order: 1;               /* Ez teszi a tartalmat felülre */
+        order: 1;
     }
-    
-    .math-window {
-        width: 90% !important;
-        left: 5% !important;
-        top: 10% !important;
+}
+
+/* Mobilnézet: fekvő (landscape) mód esetén - ha zavaró az elrendezés */
+@media screen and (orientation: landscape) and (max-width: 900px) {
+    .sidebar {
+        width: 200px !important; /* Kisebb legyen fekvőben, hogy ne takarjon */
+        flex-shrink: 0;
     }
 }
