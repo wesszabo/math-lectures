@@ -185,7 +185,7 @@ ol.custom-numbered li::before {
 }
 
 .sidebar {
-    width: 250px;
+    width: 200px;
     background-color: #f4f4f4;
     padding: 20px;
     border-right: 1px solid #ccc;
@@ -229,25 +229,18 @@ ol.custom-numbered li::before {
     border-radius: 4px;
 }
 
-/* Mobil és táblagép nézet (768px alatt) */
+/* Mobilnézet (768px alatt) */
 @media screen and (max-width: 768px) {
     .app-wrapper {
         flex-direction: column !important;
-        height: auto !important;
     }
-
     .sidebar {
         width: 100% !important; /* Telefonon teljes szélesség */
-        position: relative !important; /* Kikerül a fixálásból */
+        position: relative !important;
         order: 2; /* Bibliography alulra kerül */
-        height: auto !important;
-        padding: 10px !important;
     }
-
     .main-content {
-        order: 1; /* Tartalom felülre kerül */
-        flex: 1;
-        overflow-y: visible !important;
+        order: 1; /* Tartalom felülre */
     }
 }
 
