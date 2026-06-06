@@ -274,7 +274,7 @@ ol.custom-numbered li::before {
         right: auto !important;
         width: 100% !important; 
         margin-top: 20px !important;
-        background: #f9f9f9 !important;
+        /* background: #f9f9f9 !important;
         z-index: 1 !important;
         max-height: none !important; /* Hogy mobilban ne legyen rövid */
     }
