@@ -229,33 +229,38 @@ ol.custom-numbered li::before {
     border-radius: 4px;
 }
 
-/* Mobil és táblagép nézet (768px alatt) */
+/* Mobilnézet (768px alatt) */
 @media screen and (max-width: 768px) {
     .app-wrapper {
         flex-direction: column !important;
-        height: auto !important;
     }
     .sidebar {
         width: 100% !important;
         position: relative !important;
-        order: 2;
-    }
-    .main-content {
         order: 1;
     }
-    /* Bibliography kényszerítése az oldal aljára */
+    .main-content {
+        order: 2;
+        width: 100% !important;
+        overflow-y: visible !important;
+    }
+    /* A bibliográfia most már a main-contenten belül van, relative lesz */
     #fixed-bibliography {
         position: relative !important;
         width: 100% !important;
-        top: auto !important;
-        left: auto !important;
         margin-top: 20px !important;
+        background: #f9f9f9; /* Opcionális: megkülönböztetés */
+        padding: 10px;
     }
 }
 
-/* PC nézet (768px felett) - itt karcsúsítjuk a sidebar-t */
+/* PC nézet (768px felett) */
 @media screen and (min-width: 769px) {
     .sidebar {
-        width: 180px !important; /* Ezt csökkentettük 250px-ről */
+        width: 180px !important;
     }
+}
+
+.math-window {
+    z-index: 9999 !important;
 }
