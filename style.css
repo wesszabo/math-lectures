@@ -229,25 +229,31 @@ ol.custom-numbered li::before {
     border-radius: 4px;
 }
 
-/* Mobilnézet: állított (portrait) mód esetén */
-@media screen and (orientation: portrait) {
+/* Mobil és táblagép nézet (768px alatt) */
+@media screen and (max-width: 768px) {
     .app-wrapper {
         flex-direction: column !important;
+        height: auto !important;
     }
+
     .sidebar {
-        width: 100% !important;
-        position: static !important;
-        order: 2;
+        width: 100% !important; /* Telefonon teljes szélesség */
+        position: relative !important; /* Kikerül a fixálásból */
+        order: 2; /* Bibliography alulra kerül */
+        height: auto !important;
+        padding: 10px !important;
     }
+
     .main-content {
-        order: 1;
+        order: 1; /* Tartalom felülre kerül */
+        flex: 1;
+        overflow-y: visible !important;
     }
 }
 
-/* Mobilnézet: fekvő (landscape) mód esetén - ha zavaró az elrendezés */
-@media screen and (orientation: landscape) and (max-width: 900px) {
+/* PC nézet (768px felett) - itt karcsúsítjuk a sidebar-t */
+@media screen and (min-width: 769px) {
     .sidebar {
-        width: 200px !important; /* Kisebb legyen fekvőben, hogy ne takarjon */
-        flex-shrink: 0;
+        width: 180px !important; /* Ezt csökkentettük 250px-ről */
     }
 }
