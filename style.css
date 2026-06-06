@@ -228,3 +228,18 @@ ol.custom-numbered li::before {
     border-left: 5px solid #e6db55; /* Vastagabb vonal a bal oldalon */
     border-radius: 4px;
 }
+
+/* Mobil nézet: 768px szélesség alatt */
+@media screen and (max-width: 768px) {
+    #fixed-bibliography {
+        position: static; /* Kikerül a fix pozícióból */
+        width: 100%;      /* Kiszélesedik a képernyőhöz */
+        margin-top: 20px;
+        max-height: 150px;
+    }
+    
+    .math-window {
+        width: 95% !important; /* A felugró ablakok ne lógjanak ki */
+        left: 2.5% !important;
+    }
+}
